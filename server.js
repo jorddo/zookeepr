@@ -57,6 +57,11 @@ app.get('/api/animals', (req, res) => {
   res.json(results);
 });
 
+app.get('/api/animals/:id', (req, res) => {
+  const result = findByID(req.params.id, animals);
+  res.json(result);
+});
+
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
 });
